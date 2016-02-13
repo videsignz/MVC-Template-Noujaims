@@ -23,29 +23,43 @@ ini_set("display_errors", 1);
  */
 ini_set('session.cookie_httponly', 1);
 
+$URL = 'http://' . $_SERVER['HTTP_HOST'] . str_replace('public', '', dirname($_SERVER['SCRIPT_NAME']));
+
 /**
  * Returns the full configuration.
  * This is used by the core/Config class.
  */
+
 return array(
 	/**
 	 * Configuration for: Base URL
 	 * This detects your URL/IP incl. sub-folder automatically. You can also deactivate auto-detection and provide the
 	 * URL manually. This should then look like 'http://192.168.33.44/' ! Note the slash in the end.
 	 */
-	'URL' => 'http://' . $_SERVER['HTTP_HOST'] . str_replace('public', '', dirname($_SERVER['SCRIPT_NAME'])),
+	'URL' => $URL,
 	/**
 	 * Configuration for: Folders
 	 * Usually there's no reason to change this.
 	 */
 	'PATH_CONTROLLER' => realpath(dirname(__FILE__).'/../../') . '/application/controller/',
+	'PATH_TEMPLATES' => realpath(dirname(__FILE__).'/../../') . '/application/view/_templates/',
+	'PATH_PUBLIC' => realpath(dirname(__FILE__).'/../../') . '/public/',
+	'PATH_JS' => realpath(dirname(__FILE__).'/../../') . '/public/js/',
 	'PATH_VIEW' => realpath(dirname(__FILE__).'/../../') . '/application/view/',
+	'PATH' => realpath(dirname(__FILE__).'/../../').'/',
 	/**
 	 * Configuration for: Avatar paths
 	 * Internal path to save avatars. Make sure this folder is writable. The slash at the end is VERY important!
 	 */
 	'PATH_AVATARS' => realpath(dirname(__FILE__).'/../../') . '/public/avatars/',
 	'PATH_AVATARS_PUBLIC' => 'avatars/',
+	/**
+	 * Configuration for: Public Folder URLS
+	 */	
+	'URL_CSS' => $URL . 'css/',
+	'URL_JS' => $URL . 'js/',
+	'URL_PLUGINS' => $URL . 'plugins/',
+	'URL_IMAGES' => $URL . 'images/',
 	/**
 	 * Configuration for: Default controller and action
 	 */
