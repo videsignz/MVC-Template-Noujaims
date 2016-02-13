@@ -1,0 +1,3 @@
+[12-Feb-2016 16:25:16 UTC] PHP Warning:  require(../vendor/autoload.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/distinct/public_html/public/index.php on line 14
+[12-Feb-2016 16:25:16 UTC] PHP Warning:  require(../vendor/autoload.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/distinct/public_html/public/index.php on line 14
+[12-Feb-2016 16:25:16 UTC] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required '../vendor/autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/distinct/public_html/public/index.php on line 14
